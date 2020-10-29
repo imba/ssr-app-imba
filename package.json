@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "imba": "^2.0.0-alpha.97"
+  },
+  "scripts": {
+    "start": "imba src/http.imba",
+    "start-express": "imba src/express.imba"
+  }
+}
