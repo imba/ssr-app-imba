@@ -2,6 +2,6 @@
 
 ```
 npm install
-imba -w srv/express.imba
+imba -w src/express.imba 
 # visit http://localhost:3000/
 ```
