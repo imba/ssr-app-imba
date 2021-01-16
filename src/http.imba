@@ -1,19 +1,11 @@
-import 'imba/router'
-
 import {App} from './app'
-const http = require 'http'
-const port = 2345
+import http from 'http'
 
 const handler = do(req,res)
-	imba.run do
-		let url = (req.protocol or 'http') + "://" + req.headers.host + req.url
-		# set document.location for router to work
-		document.location = url
-		# document is a unique global in the execution context of imba.run
-		# coercing the dom to string when sending
-		res.end "" + <html>
-			<head> <title> "Application"
-			<body> <App>
+	res.end "" + <html>
+		<head> <title> "Application"
+		<body>
+			<script type='module' src='./app'>
+			<App>
 
-http.createServer(handler).listen(port) do
-	console.log "Listening on port {port}"
+imba.serve http.createServer(handler).listen(process.env.PORT or 3000)
