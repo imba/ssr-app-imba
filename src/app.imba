@@ -5,6 +5,10 @@ export tag App
 		<self>
 			<div[c:blue6]> "Welcome!"
 			<div> "Url is {document.location.href}"
+			if $web$
+				<p> "This is rendered from the client"
+			else
+				<p> "This is rendered from the server"
 
 			<header[d:hflex]>
 				<a href="/home"> "Home"
